@@ -248,7 +248,7 @@ def new_engine(cf):
         port = ':' + port
     url = dialect + driver + '://' + user + ':' + pw + '@' + host + port + '/' + db_name
     try:
-        engine = create_engine(str(url + '?charset=utf8'), encoding=str('utf-8'))
+        engine = create_engine(str(url), encoding=str('utf-8'))
     except ImportError, i:
         LOG.error('Could not find database driver. Make sure it is installed or specify the driver you want to use in the config file!')
         LOG.error(i)

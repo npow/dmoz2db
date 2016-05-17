@@ -47,7 +47,7 @@ categories_t = Table('categories', metadata,
 	Column('catid', Integer, primary_key=True, nullable=False),
 	Column('Topic', Unicode(512)),
 	Column('Title', Unicode(255), index=True),
-	Column('Description', Text(65535)),
+	Column('Description', Text),
 	Column('lastupdate', Unicode(255)),
 	Column('letterbar', Boolean, default=False),
 	Column('fatherid', Integer, ForeignKey('categories.catid'), default=TOPCAT)
@@ -75,6 +75,6 @@ externalpages_t = Table('externalpages', metadata,
 	Column('catid', Integer, ForeignKey('categories.catid')),
 	Column('link', Unicode(750), index=True),
 	Column('Title', Unicode(255), index=True),
-	Column('Description', Text(65535))
+	Column('Description', Text)
 )
 Index('idx_link', externalpages_t.c.link, mysql_length=60)

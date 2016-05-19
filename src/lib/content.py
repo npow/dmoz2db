@@ -46,7 +46,7 @@ class Link(object):
         self.description = ''
 
     def __str__(self):
-        return self.__unicode__.encode('utf8')
+        return self.__unicode__().encode('utf8')
 
     def __unicode__(self):
         return self.link

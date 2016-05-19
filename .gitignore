@@ -1,2 +1,5 @@
 *.pyc
 src/db.conf
+*.u8
+db.mysql.conf
+db.postgres.conf
